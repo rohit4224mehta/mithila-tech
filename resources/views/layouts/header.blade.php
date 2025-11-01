@@ -1,9 +1,10 @@
+
 <header>
     <!-- Top Bar -->
     <div class="top-bar bg-dark text-white py-2">
         <div class="container d-flex justify-content-between align-items-center">
             <div class="contact-info">
-                <span class="me-3"><i class="bi bi-telephone-fill me-1"></i> +1-800-555-1234</span>
+                <span class="me-3"><i class="bi bi-telephone-fill me-1"></i> +91 7464 059 831</span>
                 <span><i class="bi bi-envelope-fill me-1"></i> support@volera.com</span>
             </div>
             <div class="social-links">
@@ -15,11 +16,11 @@
     </div>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg sticky-top " style="background: linear-gradient(90deg, #1e3a8a, #3b82f6);">
+    <nav class="navbar navbar-expand-lg sticky-top " style="background: linear-gradient(90deg, #1bca96ff, #3b82f6);">
         <div class="container space-between">
             <a class="navbar-brand d-flex align-items-center" href="/" aria-label="Volera Home">
-                <img src="{{ asset('images/velora-logo.png') }}" alt="Volera Logo" width="50" class="rounded-circle shadow-sm me-2 logo-hover">
-                <span class="fw-bold text-white" style="font-family: 'Poppins', sans-serif;">Volera</span>
+                {{-- <img src="{{ asset('images/velora-logo.png') }}" alt="Volera Logo" width="260" height="50" class=" shadow-sm me-2 logo-hover  " style="white-space: nowrap;"> --}}
+                <span class="fw-bold text-danger logo-hover" style="font-family: Gravitas One serif; font-size:30PX ;">V e l o r a</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon animate-hamburger"></span>
@@ -35,8 +36,8 @@
                             <i class="bi bi-gear-fill me-1"></i> Services
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end glassmorphism" aria-labelledby="servicesDropdown">
-                            <li><a class="dropdown-item" href="{{ route('services.application') }}"><i class="bi bi-app-fill me-2"></i> Application Managed Service</a></li>
-                            <li><a class="dropdown-item" href="{{ route('services.cloud') }}"><i class="bi bi-cloud-fill me-2"></i> Cloud Managed Service</a></li>
+                            <li><a class="dropdown-item" href="{{ route('services.application-managed') }}"><i class="bi bi-app-fill me-2"></i> Application Managed Service</a></li>
+                            <li><a class="dropdown-item" href="{{ route('services.cloud-managed') }}"><i class="bi bi-cloud-fill me-2"></i> Cloud Managed Service</a></li>
                             <li><a class="dropdown-item" href="{{ route('services.mysql') }}"><i class="bi bi-database-fill me-2"></i> MySQL Service</a></li>
                         </ul>
                     </li>
@@ -60,11 +61,11 @@
                         <a class="nav-link text-white" href="{{ route('login') }}" aria-label="Login"><i class="bi bi-box-arrow-in-right me-1"></i> Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="{{ route('register') }}" aria-label="Register"><i class="bi bi-person-plus-fill me-1"></i> Register</a>
+                        <a class="nav-link text-white" href="{{ route('register') }}" aria-label="Register"><i class="bi bi-person-plus-fill me-1"></i> Get start</a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link btn btn-outline-light px-4 py-1 ms-2 logout-btn" href="#" aria-label="Logout"><i class="bi bi-box-arrow-left me-1"></i> Logout</a>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
         </div>
@@ -176,7 +177,7 @@
         }
         .navbar-nav {
             padding: 1.5rem;
-            background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+            background: linear-gradient(90deg, #7b808dff, #3b82f6);
             border-radius: 10px;
             margin-top: 0.5rem;
         }
