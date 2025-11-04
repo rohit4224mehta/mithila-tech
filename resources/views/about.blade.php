@@ -1,211 +1,241 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="min-vh-100 bg-gradient-to-br from-blue-900 via-purple-800 to-indigo-600">
-        <!-- Hero Section -->
-        <section class="py-20 md:py-32 bg-opacity-90">
-            <div class="container mx-auto px-4 text-center">
-                <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-6 animate__animated animate__fadeInDown">Welcome to Volera Technologies</h1>
-                <p class="text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto mb-10 animate__animated animate__fadeInUp">
-                    Innovating IT solutions to empower businesses worldwide. Explore our journey, mission, and services designed for your success.
-                </p>
-                <a href="#our-mission" class="btn btn-primary inline-block px-10 py-4 text-xl font-semibold rounded-full shadow-lg hover:scale-105 transition-transform duration-300 animate__animated animate__pulse animate__infinite animate__slower">
-                    Learn More
-                </a>
+    <!-- About Section -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="text-center mb-5 animate__animated animate__fadeInDown">
+                <h2 class="section-title">About Us</h2>
+                <p class="lead text-muted">Discover the story behind Mithila Tech</p>
             </div>
-        </section>
 
-        <!-- Mission & History Section -->
-        <section class="py-20 bg-white/95 backdrop-blur-lg">
-            <div class="container mx-auto px-4">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
-                    <div class="animate__animated animate__fadeInLeft">
-                        <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-6">Our Mission</h2>
-                        <p class="text-gray-600 leading-relaxed text-lg">
-                            At Volera Technologies, our mission is to revolutionize the IT landscape with innovative, scalable, and secure solutions. We empower businesses to thrive in a digital-first world through expertise, dedication, and a client-centric approach.
-                        </p>
-                    </div>
-                    <div>
-                        <img src="public/images/mission+images.avif" alt="Our Mission" class="rounded-xl shadow-2xl w-full h-auto transition-transform hover:scale-105 duration-300">
-                    </div>
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 mb-4 mb-lg-0 animate__animated animate__fadeInLeft">
+                    <img src="{{ $aboutData->image_url ?? asset('images/mission.jpg') }}" alt="Mithila Tech Team" class="img-fluid rounded-3 shadow-lg">
                 </div>
-                <div class="text-center">
-                    <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-10 animate__animated animate__zoomIn">Our History</h2>
-                    <p class="text-gray-600 leading-relaxed text-lg max-w-4xl mx-auto mb-12">
-                        Founded in 2010, Volera Technologies started with a small team of IT enthusiasts. Over 15 years, we’ve grown globally, completing over 500 projects, driven by innovation and a commitment to excellence.
+                <div class="col-lg-6 animate__animated animate__fadeInRight">
+                    <h3 class="h4 fw-bold mb-3">Who We Are</h3>
+                    <p class="mb-4">{{ $aboutData->description ?? 'Mithila Tech is a Nepal-based IT startup revolutionizing technology with innovative solutions.' }}</p>
+                    <p class="mb-4">
+                        Founded in {{ $aboutData->founded_year ?? 2020 }}, Mithila Tech has grown into a leading IT solutions provider with over {{ $aboutData->team_size ?? 50 }} professionals. We serve clients across {{ $aboutData->countries_served ?? 10 }} countries, delivering innovative solutions to empower businesses.
                     </p>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                            <h3 class="text-2xl font-semibold text-indigo-600 mb-2">2010</h3>
-                            <p class="text-gray-600">Company Founded</p>
-                        </div>
-                        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                            <h3 class="text-2xl font-semibold text-indigo-600 mb-2">2015</h3>
-                            <p class="text-gray-600">Global Expansion</p>
-                        </div>
-                        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                            <h3 class="text-2xl font-semibold text-indigo-600 mb-2">2023</h3>
-                            <p class="text-gray-600">500+ Projects</p>
-                        </div>
-                    </div>
+                    <a href="#team" class="btn btn-primary">Meet Our Team</a>
                 </div>
             </div>
-        </section>
 
-        <!-- Services Teaser Section -->
-        <section class="py-20 bg-gray-100/95 backdrop-blur-lg">
-            <div class="container mx-auto px-4 text-center">
-                <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-12 animate__animated animate__fadeIn">Our Services</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
-                        <i class="bi bi-app-fill text-4xl text-indigo-600 mb-4"></i>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Application Managed Services</h3>
-                        <p class="text-gray-600">Comprehensive support for your applications, ensuring optimal performance.</p>
-                    </div>
-                    <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
-                        <i class="bi bi-cloud-fill text-4xl text-indigo-600 mb-4"></i>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Cloud Managed Services</h3>
-                        <p class="text-gray-600">Scalable cloud solutions tailored to your business needs.</p>
-                    </div>
-                    <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
-                        <i class="bi bi-database-fill text-4xl text-indigo-600 mb-4"></i>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">MySQL Services</h3>
-                        <p class="text-gray-600">Robust database management for seamless operations.</p>
-                    </div>
-                </div>
-                {{-- <a href="{{ route('services') }}" class="btn btn-primary inline-block px-8 py-3 text-lg font-semibold rounded-full shadow-lg mt-8 hover:scale-105 transition-transform duration-300"> --}}
-                    Explore All Services
-                </a>
+            <!-- Our Values -->
+            <div class="text-center mb-5 animate__animated animate__fadeInUp">
+                <h2 class="section-title">Our Core Values</h2>
+                <p class="lead text-muted">Guiding principles that define our work</p>
             </div>
-        </section>
 
-        <!-- Testimonials Section -->
-        <section class="py-20 bg-white/95 backdrop-blur-lg">
-            <div class="container mx-auto px-4 text-center">
-                <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-12 animate__animated animate__zoomIn">What Our Clients Say</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="p-6 bg-indigo-50 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
-                        <p class="text-gray-600 italic mb-4">&quot;Volera transformed our cloud infrastructure, saving us 25% in costs!&quot;</p>
-                        <p class="text-gray-800 font-semibold">- TechCorp CEO</p>
+            <div class="row g-4">
+                @forelse ($values as $value)
+                    <div class="col-md-4 animate__animated animate__fadeInUp" data-delay="{{ $loop->index * 100 }}">
+                        <div class="card card-service h-100">
+                            <div class="card-body text-center p-4">
+                                <div class="service-icon">
+                                    <i class="bi {{ $value->icon ?? 'bi-info-circle' }}"></i>
+                                </div>
+                                <h4 class="mb-3">{{ $value->title ?? 'Value Title' }}</h4>
+                                <p class="text-muted">{{ $value->description ?? 'Description here' }}</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="p-6 bg-indigo-50 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
-                        <p class="text-gray-600 italic mb-4">&quot;Their e-commerce solution boosted our sales by 60%—incredible service!&quot;</p>
-                        <p class="text-gray-800 font-semibold">- Global Retail Manager</p>
+                @empty
+                    <div class="col-12 text-center">
+                        <p class="text-muted">No values defined yet.</p>
                     </div>
-                </div>
+                @endforelse
             </div>
-        </section>
 
-        <!-- Call to Action with Contact Form -->
-        <section class="py-20 text-center bg-gradient-to-br from-blue-900 to-indigo-600">
-            <div class="container mx-auto px-4">
-                <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-8 animate__animated animate__fadeInDown">Join Our Journey</h2>
-                <p class="text-lg text-gray-200 max-w-3xl mx-auto mb-10 animate__animated animate__fadeInUp">
-                    Ready to transform your business? Contact us today to start your digital journey with Volera Technologies!
-                </p>
-                <div class="max-w-lg mx-auto bg-white/90 backdrop-blur-md p-8 rounded-xl shadow-2xl animate__animated animate__zoomIn">
-                    <form>
-                        <div class="mb-4">
-                            <input type="text" placeholder="Your Name" class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-600">
-                        </div>
-                        <div class="mb-4">
-                            <input type="email" placeholder="Your Email" class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-600">
-                        </div>
-                        <div class="mb-6">
-                            <textarea placeholder="Your Message" class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-600" rows="4"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-full py-3 text-lg font-semibold rounded-full shadow-lg hover:scale-105 transition-transform duration-300">
-                            Get in Touch
-                        </button>
-                    </form>
+            <!-- Milestones -->
+            <div class="text-center mt-5 animate__animated animate__fadeIn">
+                <h2 class="section-title">Our Milestones</h2>
+                <p class="lead text-muted">A journey of growth and achievement</p>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-12">
+                    <ul class="timeline">
+                        @forelse ($milestones as $milestone)
+                            <li class="timeline-item animate__animated animate__fadeInUp" data-delay="{{ $loop->index * 100 }}">
+                                <div class="timeline-content">
+                                    <h5 class="mb-2">{{ $milestone->year ?? 'Year' }} - {{ $milestone->title ?? 'Title' }}</h5>
+                                    <p>{{ $milestone->description ?? 'Description here' }}</p>
+                                </div>
+                            </li>
+                        @empty
+                            <li class="timeline-item">
+                                <div class="timeline-content">
+                                    <p class="text-muted">No milestones available.</p>
+                                </div>
+                            </li>
+                        @endforelse
+                    </ul>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Footer Welcome Message -->
-        <footer class="py-6 text-center bg-gray-900 text-white">
-            <p class="text-lg">Welcome to Volera Technologies! Today is Wednesday, July 23, 2025, 06:40 PM IST</p>
-        </footer>
-    </div>
+    <!-- Team Members Section -->
+    <section id="team" class="py-5 bg-white">
+        <div class="container">
+            <div class="text-center mb-5 animate__animated animate__fadeInDown">
+                <h2 class="fw-bold">Meet Our Team</h2>
+                <p class="text-muted">The people behind Mithila Tech’s innovation and impact</p>
+            </div>
+
+            <div class="row g-4">
+                @forelse($teamMembers as $member)
+                    <div class="col-md-4 col-sm-6 animate__animated animate__fadeInUp">
+                        <div class="card h-100 shadow-sm team-card text-center">
+                            <div class="card-body">
+                                <img src="{{ $member->image_url ?? asset('images/default-avatar.png') }}" alt="{{ $member->name ?? 'Team Member' }}" class="rounded-circle mb-3" width="100" height="100">
+                                <h5 class="card-title mb-1">{{ $member->name ?? 'Name' }}</h5>
+                                <p class="text-primary fw-semibold small">{{ $member->position ?? 'Position' }}</p>
+                                <p class="card-text text-muted">{{ \Illuminate\Support\Str::limit($member->bio ?? 'Bio here', 100) }}</p>
+                            </div>
+                        </div>
+                    </div>
+                @empty
+                    <p class="text-muted text-center col-12">No team members found.</p>
+                @endforelse
+            </div>
+        </div>
+    </section>
 @endsection
 
+@push('styles')
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
-
-body {
-    font-family: 'Poppins', sans-serif;
-}
-
-.min-vh-100 {
-    min-height: 100vh;
-}
-
-.bg-gradient-to-br {
-    background-size: 200% 200%;
-    animation: gradientAnimation 15s ease infinite;
-}
-
-@keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-.card {
-    border-radius: 15px;
-    overflow: hidden;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
-
-.btn-primary {
-    background: linear-gradient(90deg, #1e3a8a, #3b82f6);
-    border: none;
-    font-weight: 600;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.btn-primary:hover {
-    transform: scale(1.05);
-    opacity: 0.9;
-}
-
-.shadow-2xl {
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-}
-
-@media (max-width: 767px) {
-    .container {
-        padding: 1rem;
+    /* Service Cards */
+    .card-service {
+        border: none;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        background: white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     }
-    .card {
-        margin: 1rem;
+
+    .card-service:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     }
-    h1 { font-size: 2.5rem; }
-    h2 { font-size: 2rem; }
-}
+
+    .service-icon {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: rgba(67, 97, 238, 0.1);
+        margin: 0 auto 1.5rem;
+        color: var(--primary-color);
+        font-size: 2rem;
+    }
+
+    /* Timeline */
+    .timeline {
+        position: relative;
+        list-style: none;
+        padding: 0;
+    }
+
+    .timeline::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 3px;
+        background: var(--primary-color);
+        transform: translateX(-50%);
+    }
+
+    .timeline-item {
+        position: relative;
+        width: 50%;
+        padding: 0 40px;
+        box-sizing: border-box;
+        margin-bottom: 30px;
+    }
+
+    .timeline-item:nth-child(odd) {
+        left: 0;
+    }
+
+    .timeline-item:nth-child(even) {
+        left: 50%;
+    }
+
+    .timeline-content {
+        padding: 20px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    @media (max-width: 768px) {
+        .timeline::before {
+            left: 40px;
+        }
+
+        .timeline-item {
+            width: 100%;
+            padding-left: 70px;
+            padding-right: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 0;
+        }
+    }
+
+    /* Team Member Cards */
+    .team-card img {
+        object-fit: cover;
+        border: 3px solid #4361ee;
+    }
+
+    .team-card {
+        border-radius: 12px;
+        transition: 0.3s ease;
+    }
+
+    .team-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(67, 97, 238, 0.1);
+    }
+
+    /* Custom Variables */
+    :root {
+        --primary-color: #4361ee;
+    }
 </style>
+@endpush
 
+@push('scripts')
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+document.addEventListener('DOMContentLoaded', function () {
+    const animateOnScroll = () => {
+        const elements = document.querySelectorAll('.animate__animated');
+
+        elements.forEach(element => {
+            const elementPosition = element.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.3;
+            const delay = element.dataset.delay ? parseInt(element.dataset.delay) : 0;
+
+            if (elementPosition < screenPosition) {
+                setTimeout(() => {
+                    element.classList.add(element.classList[1]);
+                }, delay);
+            }
         });
-    });
+    };
+
+    window.addEventListener('scroll', animateOnScroll);
+    window.addEventListener('load', animateOnScroll);
 });
 </script>
-
-<!-- Include Bootstrap Icons -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+@endpush

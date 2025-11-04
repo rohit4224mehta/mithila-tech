@@ -1,209 +1,325 @@
-
 <header>
     <!-- Top Bar -->
     <div class="top-bar bg-dark text-white py-2">
-        <div class="container d-flex justify-content-between align-items-center">
-            <div class="contact-info">
-                <span class="me-3"><i class="bi bi-telephone-fill me-1"></i> +91 7464 059 831</span>
-                <span><i class="bi bi-envelope-fill me-1"></i> support@volera.com</span>
-            </div>
-            <div class="social-links">
-                <a href="#" class="text-white me-3" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                <a href="#" class="text-white me-3" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
-                <a href="#" class="text-white" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="contact-info d-flex flex-wrap gap-3">
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-telephone-fill me-2 text-primary"></i>
+                            <a href="tel:+917464059831" class="text-white text-decoration-none">+91 7464 059 831</a>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-envelope-fill me-2 text-primary"></i>
+                            <a href="mailto:support@mithilatech.com" class="text-white text-decoration-none">support@mithilatech.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="social-links d-inline-flex gap-2">
+                        <a href="https://facebook.com/mithilatech" target="_blank" class="text-white" aria-label="Facebook" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Facebook">
+                            <i class="bi bi-facebook fs-5"></i>
+                        </a>
+                        <a href="https://twitter.com/mithilatech" target="_blank" class="text-white" aria-label="Twitter" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Twitter">
+                            <i class="bi bi-twitter-x fs-5"></i>
+                        </a>
+                        <a href="https://linkedin.com/company/mithilatech" target="_blank" class="text-white" aria-label="LinkedIn" data-bs-toggle="tooltip" data-bs-placement="bottom" title="LinkedIn">
+                            <i class="bi bi-linkedin fs-5"></i>
+                        </a>
+                        <a href="https://instagram.com/mithilatech" target="_blank" class="text-white" aria-label="Instagram" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Instagram">
+                            <i class="bi bi-instagram fs-5"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg sticky-top " style="background: linear-gradient(90deg, #1bca96ff, #3b82f6);">
-        <div class="container space-between">
-            <a class="navbar-brand d-flex align-items-center" href="/" aria-label="Volera Home">
-                {{-- <img src="{{ asset('images/velora-logo.png') }}" alt="Volera Logo" width="260" height="50" class=" shadow-sm me-2 logo-hover  " style="white-space: nowrap;"> --}}
-                <span class="fw-bold text-danger logo-hover" style="font-family: Gravitas One serif; font-size:30PX ;">V e l o r a</span>
+    <!-- Main Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-gradient-primary sticky-top">
+        <div class="container">
+            <!-- Brand Logo -->
+            <a class="navbar-brand logo-highlight" href="{{ route('home') }}" aria-label="Mithila Tech Home">
+                <div class="d-flex align-items-center">
+                    <img src="{{ asset('images/mithila-tech-logo.png') }}" alt="Mithila Tech Logo" style="height: 60px; width: auto;" class="me-2">
+                </div>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon animate-hamburger"></span>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center">
-                    <!-- New Navigation Items -->
+
+            <!-- Navigation Menu -->
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="{{ route('about') }}" aria-label="About"><i class="bi bi-info-circle-fill me-1"></i> About</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-white" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bi bi-gear-fill me-1"></i> Services
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end glassmorphism" aria-labelledby="servicesDropdown">
-                            <li><a class="dropdown-item" href="{{ route('services.application-managed') }}"><i class="bi bi-app-fill me-2"></i> Application Managed Service</a></li>
-                            <li><a class="dropdown-item" href="{{ route('services.cloud-managed') }}"><i class="bi bi-cloud-fill me-2"></i> Cloud Managed Service</a></li>
-                            <li><a class="dropdown-item" href="{{ route('services.mysql') }}"><i class="bi bi-database-fill me-2"></i> MySQL Service</a></li>
-                        </ul>
+                        <a class="nav-link text-white" href="{{ route('home') }}"><i class="bi bi-house-door-fill me-1"></i> Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="{{ route('solutions') }}" aria-label="Solutions"><i class="bi bi-lightbulb-fill me-1"></i> Solutions</a>
+                        <a class="nav-link text-white" href="{{ route('about') }}"><i class="bi bi-info-circle-fill me-1"></i> About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="{{ route('media') }}" aria-label="Media"><i class="bi bi-camera-fill me-1"></i> Media</a>
+                        <a class="nav-link text-white" href="{{ route('solutions') }}"><i class="bi bi-lightbulb-fill me-1"></i> Solutions</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="{{ route('blog') }}" aria-label="Blog"><i class="bi bi-journal-text me-1"></i> Blog</a>
+                        <a class="nav-link text-white" href="{{ route('services') }}"><i class="bi bi-gear-fill me-1"></i> Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="{{ route('careers') }}" aria-label="Careers"><i class="bi bi-person-workspace me-1"></i> Careers</a>
+                        <a class="nav-link text-white" href="{{ route('careers') }}"><i class="bi bi-person-workspace me-1"></i> Careers</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="{{ route('global') }}" aria-label="Global"><i class="bi bi-globe2 me-1"></i> Global</a>
-                    </li>
-                    <!-- Static Auth Links -->
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="{{ route('login') }}" aria-label="Login"><i class="bi bi-box-arrow-in-right me-1"></i> Login</a>
+                        <a class="nav-link text-white" href="{{ route('blog') }}"><i class="bi bi-journal-text me-1"></i> Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="{{ route('register') }}" aria-label="Register"><i class="bi bi-person-plus-fill me-1"></i> Get start</a>
+                        <a class="nav-link text-white" href="{{ route('media') }}"><i class="bi bi-camera-fill me-1"></i> Media</a>
                     </li>
-                    {{-- <li class="nav-item">
-                        <a class="nav-link btn btn-outline-light px-4 py-1 ms-2 logout-btn" href="#" aria-label="Logout"><i class="bi bi-box-arrow-left me-1"></i> Logout</a>
-                    </li> --}}
                 </ul>
+
+                <!-- Right Side Navigation (Dynamic based on auth) -->
+                <div class="d-flex align-items-center gap-3">
+                    <div class="vr text-white mx-2 d-none d-lg-block" style="height: 30px;"></div>
+                    @auth
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person-circle me-1"></i> {{ auth()->user()->name }}
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                                <li><a class="dropdown-item" href="{{ route('client.dashboard') }}"><i class="bi bi-speedometer2 me-2"></i> Dashboard</a></li>
+                                <li><a class="dropdown-item" href="{{ route('client.profile') }}"><i class="bi bi-speedometer2 me-2"></i> Profile</a></li>
+
+                                <li><a class="dropdown-item" href="{{ route('client.password.edit') }}"><i class="bi bi-lock-fill me-2"></i> Change Password</a></li>
+                                <li><a class="dropdown-item" href="{{ route('client.projects') }}"><i class="bi bi-briefcase-fill me-2"></i> Projects</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li>
+                                    <form action="{{ route('logout') }}" method="POST" class="m-0">
+                                        @csrf
+                                        <button type="submit" class="dropdown-item text-danger"><i class="bi bi-box-arrow-right me-2"></i> Logout</button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                    @else
+                        <a href="{{ route('register') }}" class="btn btn-outline-light">
+                            <i class="bi bi-person-plus-fill me-1"></i> Get Started
+                        </a>
+                        <a href="{{ route('login') }}" class="btn btn-light text-primary">
+                            <i class="bi bi-box-arrow-in-right me-1"></i> Login
+                        </a>
+                    @endauth
+                </div>
             </div>
         </div>
     </nav>
 </header>
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+:root {
+    --primary-color: #4361ee;
+    --primary-dark: rgb(42, 41, 43);
+    --primary-light: rgba(67, 97, 238, 0.1);
+    --secondary-color: #4895ef;
+    --dark-color: #1a1a2e;
+    --light-color: #f8f9fa;
+    --text-color: #2b2d42;
+    --text-muted: #6c757d;
+    --white: #ffffff;
+    --border-radius: 0.5rem;
+    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+    --transition: all 0.3s ease;
+}
 
-    .top-bar {
-        font-family: 'Poppins', sans-serif;
-        font-size: 0.9rem;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+/* Top Bar */
+.top-bar {
+    font-size: 0.875rem;
+    background-color: var(--dark-color);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-info a {
+    transition: var(--transition);
+}
+.contact-info a:hover {
+    color: var(--secondary-color) !important;
+    text-decoration: underline;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+.social-links a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    color: var(--secondary-color);
+}
+
+/* Main Nav */
+.navbar {
+    padding: 0.75rem 0;
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
+    box-shadow: var(--box-shadow);
+}
+
+.navbar-brand {
+    transition: var(--transition);
+}
+.navbar-brand:hover {
+    transform: scale(1.05);
+}
+
+.nav-link {
+    font-weight: 500;
+    padding: 0.75rem 1.25rem;
+    margin: 0 0.25rem;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    position: relative;
+}
+.nav-link:hover, .nav-link:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--secondary-color);
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary-color);
+    transition: var(--transition);
+    transform: translateX(-50%);
+}
+.nav-link:hover::after, .nav-link:focus::after {
+    width: 60%;
+}
+.nav-link.active {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: var(--secondary-color);
+}
+.nav-link.active::after {
+    width: 60%;
+}
+
+.dropdown-menu {
+    border: none;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    border-radius: var(--border-radius);
+    margin-top: 0.5rem;
+    min-width: 12rem;
+    background-color: var(--dark-color);
+}
+
+.dropdown-item {
+    padding: 0.5rem 1.5rem;
+    transition: var(--transition);
+    color: var(--white);
+}
+.dropdown-item:hover, .dropdown-item:focus {
+    background-color: var(--primary-light);
+    color: var(--secondary-color);
+}
+
+.btn-outline-light {
+    border-color: rgba(255, 255, 255, 0.5);
+    transition: var(--transition);
+}
+.btn-outline-light:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.btn-light {
+    background-color: var(--white);
+    border-color: var(--white);
+    transition: var(--transition);
+}
+.btn-light:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--white);
+}
+
+/* Mobile */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        padding: 1.5rem;
+        background: linear-gradient(135deg, var(--dark-color) 0%, var(--primary-dark) 100%);
+        border-radius: var(--border-radius);
+        margin-top: 1rem;
+        box-shadow: var(--box-shadow);
     }
-
-    .contact-info i, .social-links i {
-        transition: transform 0.3s ease;
+    .nav-item {
+        margin: 0.5rem 0;
     }
-
-    .contact-info i:hover, .social-links i:hover {
-        transform: scale(1.2);
-    }
-
-    .navbar {
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-        transition: all 0.3s ease;
-    }
-
-    .navbar-brand .logo-hover {
-        transition: transform 0.5s ease, filter 0.3s ease;
-    }
-
-    .navbar-brand .logo-hover:hover {
-        transform: rotate(360deg);
-        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.6));
-    }
-
-    .nav-link {
-        font-family: 'Poppins', sans-serif;
-        font-size: 1.1rem;
-        font-weight: 500;
-        padding: 0.5rem 1.2rem;
-        transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
-    }
-
-    .nav-link:hover {
-        color: #ffffff !important;
-        background-color: rgba(255, 255, 255, 0.15);
-        border-radius: 8px;
-        transform: translateY(-2px);
-    }
-
-    .glassmorphism {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        border: none;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        animation: slideIn 0.3s ease;
-    }
-
     .dropdown-menu {
-        border-radius: 10px;
+        margin-left: 1rem;
+        background-color: rgba(26, 26, 46, 0.9);
+    }
+    .navbar-toggler {
+        border: none;
         padding: 0.5rem;
     }
-
-    .dropdown-item {
-        color: white;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 400;
-        padding: 0.5rem 1rem;
-        transition: background-color 0.3s ease, transform 0.2s ease;
+    .navbar-toggler:focus {
+        box-shadow: none;
     }
+}
 
-    .dropdown-item:hover {
-        background-color: rgba(255, 255, 255, 0.2);
-        color: #ffffff;
-        transform: translateX(5px);
-    }
+/* Dropdown Animation */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.dropdown-menu {
+    animation: slideDown 0.3s ease forwards;
+}
 
-    .logout-btn {
-        font-family: 'Poppins', sans-serif;
-        font-weight: 600;
-        border-radius: 50px;
-        border-width: 2px;
-        transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-    }
-
-    .logout-btn:hover {
-        background-color: #ffffff !important;
-        color: #1e3a8a !important;
-        transform: scale(1.05);
-    }
-
-    .animate-hamburger {
-        transition: transform 0.3s ease;
-    }
-
-    .navbar-toggler[aria-expanded="true"] .animate-hamburger {
-        transform: rotate(90deg);
-    }
-
-    @media (max-width: 991px) {
-        .top-bar .container {
-            flex-direction: column;
-            text-align: center;
-        }
-        .top-bar .contact-info, .top-bar .social-links {
-            margin: 0.5rem 0;
-        }
-        .navbar-nav {
-            padding: 1.5rem;
-            background: linear-gradient(90deg, #7b808dff, #3b82f6);
-            border-radius: 10px;
-            margin-top: 0.5rem;
-        }
-        .nav-item {
-            margin: 0.75rem 0;
-        }
-        .nav-link {
-            font-size: 1.2rem;
-        }
-        .dropdown-menu {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-        }
-    }
-
-    @keyframes slideIn {
-        from {
-            opacity: 0;
-            transform: translateY(-10px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
+/* Sticky Nav */
+.sticky-top {
+    top: 0;
+    z-index: 1030;
+}
 </style>
 
-<!-- Include Bootstrap Icons -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+@push('scripts')
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    tooltipTriggerList.forEach(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+
+    const currentUrl = window.location.pathname;
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentUrl || (currentUrl.includes('client') && link.getAttribute('href') === '{{ route('client.profile') }}')) {
+            link.classList.add('active');
+            link.setAttribute('aria-current', 'page');
+            const dropdown = link.closest('.dropdown-menu');
+            if (dropdown) {
+                const dropdownToggle = document.querySelector(`[aria-labelledby="${dropdown.getAttribute('aria-labelledby')}"]`);
+                if (dropdownToggle) dropdownToggle.classList.add('active');
+            }
+        }
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+});
+</script>
+@endpush
